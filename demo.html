@@ -1,14 +1,16 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Wheelzoom</title>
+    <meta charset="utf-8">
+    <title>Wheelzoom</title>
 </head>
 <body>
-	<img class='zoom' src='daisy.jpg' alt='Daisy!' width='555' height='320'/>
-	<script src="wheelzoom.js"></script>
-	<script>
-		wheelzoom(document.querySelector('img.zoom'));
-	</script>
+    <div style="width:800px;height:600px;overflow:hidden;">
+    <img class='zoom' src='panda.jpg' alt='Daisy!' style="background:gray"/>
+    </div>
+    <script src="wheelzoom.js"></script>
+    <script>
+        wheelzoom(document.querySelector('img.zoom'), {width: 800,height: 600});
+    </script>
 </body>
 </html>

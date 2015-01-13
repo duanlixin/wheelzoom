@@ -28,18 +28,20 @@ window.wheelzoom = (function(){
 		var bgPosX;
 		var bgPosY;
 		var previousEvent;
+		var containerWidth;
+		var containerHeight;
 
 		function updateBgStyle() {
 			if (bgPosX > 0) {
 				bgPosX = 0;
-			} else if (bgPosX < width - bgWidth) {
-				bgPosX = width - bgWidth;
+			} else if (bgPosX < containerWidth - bgWidth) {
+				bgPosX = containerWidth - bgWidth;
 			}
 
 			if (bgPosY > 0) {
 				bgPosY = 0;
-			} else if (bgPosY < height - bgHeight) {
-				bgPosY = height - bgHeight;
+			} else if (bgPosY < containerHeight - bgHeight) {
+				bgPosY = containerHeight - bgHeight;
 			}
 
 			img.style.backgroundSize = bgWidth+'px '+bgHeight+'px';
@@ -128,6 +130,8 @@ window.wheelzoom = (function(){
 			height = parseInt(computedStyle.height, 10);
 			bgWidth = width;
 			bgHeight = height;
+			containerWidth = options.width;
+			containerHeight = options.height;
 			bgPosX = 0;
 			bgPosY = 0;
 
