@@ -30,14 +30,14 @@ window.wheelzoom = (function(){
 		var previousEvent;
 		var containerWidth;
 		var containerHeight;
-		var isExceedHeight = false;
-		var isExceedWidth = false;
+		var isExceedHeight = true;
+		var isExceedWidth = true;
 
 		function updateBgStyle() {
 			if (bgPosX > 0) {
 				bgPosX = 0;
 			} else if (bgPosX < containerWidth - bgWidth) {
-				if(isExceedWidth === true) {
+				if(isExceedWidth === false) {
 					if(bgWidth > width ) {
 						if(bgPosX<=width - bgWidth) {
 
@@ -57,7 +57,7 @@ window.wheelzoom = (function(){
 			if (bgPosY > 0) {
 				bgPosY = 0;
 			} else if (bgPosY < containerHeight - bgHeight) {
-				if(isExceedHeight === true) {
+				if(isExceedHeight === false) {
 					
 					if(bgHeight > height ) {
 						if(bgPosY<=height - bgHeight) {
@@ -167,10 +167,10 @@ window.wheelzoom = (function(){
 			bgPosX = 0;
 			bgPosY = 0;
 			if(height < containerHeight) {
-				isExceedHeight = true;
+				isExceedHeight = false;
 			}
 			if(width < containerWidth) {
-				isExceedWidth = true;
+				isExceedWidth = false;
 			}
 
 			setSrcToBackground(img);
