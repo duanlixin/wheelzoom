@@ -5,12 +5,26 @@
     <title>Wheelzoom</title>
 </head>
 <body>
-    <div style="width:800px;height:600px;overflow:hidden;">
-    <img class='zoom' src='panda.jpg' alt='Daisy!' style="background:gray"/>
+    <div style="width:600px;height:600px;overflow:hidden;">
+        <img id="zom1" class='zoom' src='dt.jpg' alt='Daisy!' style="background:gray;"/>
+        <!-- <img id="zom2" class='zoom' src='dt.jpg' alt='Daisy!' style="background:gray;display:none;  "/> -->
     </div>
+
+    <button id="btn1">下一张</button>
+    <button id="btn2">上一张</button>
     <script src="wheelzoom.js"></script>
     <script>
-        wheelzoom(document.querySelector('img.zoom'), {width: 800,height: 600});
+        wheelzoom(document.querySelector('#zom1'), {width: 600,height: 600});
+        wheelzoom(document.querySelector('#zom2'), {width: 600,height: 600});
+        document.querySelector('#btn1').onclick = function() {
+            document.querySelector('#zom1').style.display = 'none';
+            document.querySelector('#zom2').style.display = '';
+        };
+
+        document.querySelector('#btn2').onclick = function() {
+            document.querySelector('#zom1').style.display = '';
+            document.querySelector('#zom2').style.display = 'none';
+        };
     </script>
 </body>
 </html>
